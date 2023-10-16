@@ -11,9 +11,11 @@ ixx{*}: extension = ipp
 txx{*}: extension = tpp
 cxx{*}: extension = cpp
 
-# Assume headers are importable unless stated otherwise.
+hxx{*}: cxx.importable = false
+
+# Every exe{} in this subproject is by default a test.
 #
-hxx{*}: cxx.importable = true
+exe{*}: test = true
 
 # The test target for cross-testing (running tests under Wine, etc).
 #

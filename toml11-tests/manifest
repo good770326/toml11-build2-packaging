@@ -1,14 +1,24 @@
 : 1
 name: toml11-tests
-version: 0.1.0-a.0.z
+version: 3.7.1
+type: exe
 language: c++
 project: toml11
-summary: toml11-tests C++ executable
-license: other: proprietary ; Not free/open source.
+summary: Tests for the toml11 library
+license: MIT
+
 description-file: README.md
-url: https://example.org/toml11
-email: good770326@hotmail.com
-#build-error-email: good770326@hotmail.com
+
+url: https://github.com/ToruNiina/toml11
+email: niina.toru.68u@gmail.com
+
+package-url: https://github.com/good770326/toml11-build2-packaging
+package-email: good770326@hotmail.com
+
 depends: * build2 >= 0.16.0
 depends: * bpkg >= 0.16.0
-#depends: libhello ^1.0.0
+
+depends: toml11 ^ 3.7.1
+depends: libboost-test
+
+builds: default

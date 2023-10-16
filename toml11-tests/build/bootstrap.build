@@ -3,5 +3,9 @@ project = toml11-tests
 using version
 using config
 using test
-using install
 using dist
+
+# Tests should not be installed.
+# Do not use 'install' module.
+#
+# using install

@@ -1,6 +1,17 @@
 libs =
-#import libs += libhello%lib{hello}
+import libs += toml11%lib{toml11}
+import libs += libboost-test%lib{boost_test}
 
-exe{toml11-tests}: {hxx ixx txx cxx}{**} $libs testscript
+# exe{toml11-tests}: {hxx ixx txx cxx}{**} $libs
 
-cxx.poptions =+ "-I$out_root" "-I$src_root"
+tests/
+{
+    for test_cxx_file : cxx{* -{test_windows test_comments test_serialize_file test_multiple_translation_unit_*}}
+    {
+        test_name = $name($test_cxx_file) # Get the pure cxxfile name.
+        
+        ./: exe{$test_name}: cxx{$test_name} hxx{**} $libs
+    }
+}
+
+# cxx.poptions =+ "-I$out_root" "-I$src_root"
