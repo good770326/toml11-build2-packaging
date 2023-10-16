@@ -1,0 +1,3 @@
+import libs = toml11%lib{toml11}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

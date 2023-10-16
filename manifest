@@ -1,0 +1,14 @@
+: 1
+name: toml11
+version: 0.1.0-a.0.z
+type: lib,binless
+language: c++
+summary: toml11 C++ library
+license: other: proprietary ; Not free/open source.
+description-file: README.md
+url: https://example.org/toml11
+email: you@example.org
+#build-error-email: you@example.org
+depends: * build2 >= 0.16.0
+depends: * bpkg >= 0.16.0
+#depends: libhello ^1.0.0
