@@ -1,27 +1,3 @@
-intf_libs = # Interface dependencies.
-#import xxxx_libs += libhello%lib{hello}
+./: {*/ -build/} manifest legal{LICENSE} doc{*.md}
 
-lib{toml11}: {hxx ixx txx}{** -version} hxx{version} $intf_libs
-
-hxx{version}: in{version} $src_root/manifest
-
-# Build options.
-#
-cxx.poptions =+ "-I$out_root" "-I$src_root"
-
-# Export options.
-#
-lib{toml11}:
-{
-  cxx.export.poptions = "-I$out_root" "-I$src_root"
-  cxx.export.libs = $intf_libs
-}
-
-# Install into the toml11/ subdirectory of, say, /usr/include/
-# recreating subdirectories.
-#
-{hxx ixx txx}{*}:
-{
-  install         = include/toml11/
-  install.subdirs = true
-}
+tests/: install = false

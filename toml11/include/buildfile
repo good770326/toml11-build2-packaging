@@ -1,0 +1,5 @@
+lib{toml11}: hxx{**}
+
+# Export Options
+#
+lib{toml11}: cxx.export.poptions = "-I$src_base"

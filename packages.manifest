@@ -1,0 +1,5 @@
+: 1
+location: toml11/
+
+:
+location: toml11-tests/

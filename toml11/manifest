@@ -1,0 +1,23 @@
+: 1
+name: toml11
+version: 3.7.1
+type: lib,binless
+language: c++
+project: toml11
+summary: A C++11 (or later) header-only toml parser/encoder depending only on C++ standard library.
+license: MIT
+
+description-file: README.md
+
+url: https://github.com/ToruNiina/toml11
+email: niina.toru.68u@gmail.com
+
+package-url: https://github.com/good770326/toml11-build2-packaging
+package-email: good770326@hotmail.com
+
+depends: * build2 >= 0.16.0
+depends: * bpkg >= 0.16.0
+
+tests: toml11-tests == $
+
+builds: default

@@ -1,0 +1,6 @@
+import libs = toml11%lib{toml11}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs file{sample.toml}
+{
+    test.arguments = "$src_base/sample.toml"
+}

@@ -1,5 +1,3 @@
-./: {*/ -build/} doc{README.md} manifest
+import pkgs = {*/ -upstream/}
 
-# Don't install tests.
-#
-tests/: install = false
+./: $pkgs
