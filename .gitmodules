@@ -1,3 +1,6 @@
 [submodule "upstream"]
 	path = upstream
 	url = https://github.com/ToruNiina/toml11.git
+[submodule "upstream-toml"]
+	path = upstream-toml
+	url = https://github.com/toml-lang/toml
