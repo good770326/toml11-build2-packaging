@@ -1,0 +1,2 @@
+env -c $src_base/tests -- \
+$* 2>| 1>| == 0
