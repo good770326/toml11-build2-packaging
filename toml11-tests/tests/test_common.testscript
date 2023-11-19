@@ -1,2 +1,5 @@
+# Set the working directory of test as where its executable file are located,
+# and then accept and echo the output of all streams and zero return if test succeed.
+# These tests will print results by themselves.
 env -c $src_base/tests -- \
 $* 2>| 1>| == 0
