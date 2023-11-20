@@ -1,3 +1,3 @@
-import pkgs = {*/ -upstream/}
+import pkgs = {*/ -upstream/ -upstream-toml/}
 
 ./: $pkgs
