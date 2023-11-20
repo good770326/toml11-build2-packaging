@@ -2,5 +2,5 @@
 # and then accept and echo the output of all streams and zero return if test succeed.
 # These tests will print results by themselves.
 # Also cleanup all temp file automatically. ('&***' for this purpose)
-ln --no-cleanup -s $src_base/../../upstream-toml toml ;
+ln --no-cleanup -s $src_base/tests/toml toml ;
 $* 2>| 1>| &*** == 0
