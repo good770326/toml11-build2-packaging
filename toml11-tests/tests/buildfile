@@ -17,7 +17,7 @@ tests/
         }
         else
         {
-            exe{$test_name}: testscript{../test_common} ../../../upstream-toml
+            exe{$test_name}: testscript{../test_common}
         }
     }
 

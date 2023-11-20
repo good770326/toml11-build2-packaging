@@ -1,3 +1,3 @@
 import pkgs = {*/ -upstream/ -upstream-toml/}
 
-./: $pkgs
+./: $pkgs upstream-toml/
