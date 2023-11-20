@@ -8,6 +8,6 @@ lib{toml11}: cxx.export.poptions = "-I$src_base"
 
 hxx{**}:
 {
-    install = ./
+    install = include/
     install.subdirs = true
 }
