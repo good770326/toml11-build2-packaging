@@ -1,5 +1,6 @@
-# Set the working directory of test as where its executable file are located,
+# Link upstream-toml dir to 'toml' dir in the working directory of test,
 # and then accept and echo the output of all streams and zero return if test succeed.
 # These tests will print results by themselves.
-env -c $src_base/tests -- \
-$* 2>| 1>| == 0
+# Also cleanup all temp file automatically. ('&***' for this purpose)
+ln --no-cleanup -s $src_base/../../upstream-toml toml ;
+$* 2>| 1>| &*** == 0
