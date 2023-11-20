@@ -2,8 +2,6 @@ libs =
 import libs += toml11%lib{toml11}
 import libs += libboost-test%lib{boost_test}
 
-toml_files_for_test = file{**.toml}
-
 tests/
 {
     for test_cxx_file : cxx{* -{test_windows test_multiple_translation_unit_*}}
@@ -29,7 +27,7 @@ tests/
     # Build test_windows.cpp only on Windows.
     if($cxx.target.class == 'windows')
     {
-        ./: exe{test_windows}: cxx{test_windows} hxx{**} $libs
+        ./: exe{test_windows}: cxx{test_windows} hxx{**} $libs toml/
     }
 }
 
