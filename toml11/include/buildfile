@@ -1,5 +1,13 @@
 lib{toml11}: hxx{**}
 
+cxx.poptions =+ "-I$src_base"
+
 # Export Options
 #
 lib{toml11}: cxx.export.poptions = "-I$src_base"
+
+hxx{**}:
+{
+    install = ./
+    install.subdirs = true
+}
