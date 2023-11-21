@@ -26,10 +26,8 @@ tests/
     ./: exe{test_multiple_translation_unit}: cxx{test_multiple_translation_unit_*} hxx{**} $libs
 
     # Build test_windows.cpp only on Windows.
-    if($cxx.target.class == 'windows')
-    {
-        ./: exe{test_windows}: cxx{test_windows} hxx{**} $libs
-    }
+    ./: exe{test_windows}: include = ($cxx.target.class == 'windows') # Should not write if windows here, see https://github.com/build2/HOWTO/blob/master/entries/keep-build-graph-config-independent.md
+    exe{test_windows}: cxx{test_windows} hxx{**} $libs
 }
 
 # cxx.poptions =+ "-I$out_root" "-I$src_root"
