@@ -28,6 +28,8 @@ tests/
 # cxx.poptions =+ "-I$out_root" "-I$src_root"
 cxx.poptions =+ "-DUNITTEST_FRAMEWORK_LIBRARY_EXIST" # Fixed BOOST_TEST_NO_LIB redefined warning.
 
-# Ignore some warning in test on gcc
-info cxx.class is $cxx.class
-cxx.coptions += "-Wno-dangling-reference" "-Wno-sign-compare" "-Wno-unused" "-Wno-deprecated" "-Wno-unknown-warning-option"
+# Ignore some warning in test
+if ($cxx.class != 'msvc')
+{
+    cxx.coptions += "-Wno-dangling-reference" "-Wno-sign-compare" "-Wno-unused" "-Wno-deprecated" "-Wno-unknown-warning-option"
+}

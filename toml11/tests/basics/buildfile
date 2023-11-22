@@ -4,3 +4,13 @@ exe{driver}: {hxx ixx txx cxx}{**} $libs file{sample.toml}
 {
     test.arguments = "$src_base/sample.toml"
 }
+
+# Ignore some compiler warning
+if ($cxx.class == 'msvc')
+{
+    cxx.coptions =+ /W1
+}
+else
+{
+    cxx.coptions =+ "-Wno-dangling-reference" "-Wno-sign-compare" "-Wno-unused" "-Wno-deprecated" "-Wno-unknown-warning-option"
+}
