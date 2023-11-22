@@ -29,7 +29,5 @@ tests/
 cxx.poptions =+ "-DUNITTEST_FRAMEWORK_LIBRARY_EXIST" # Fixed BOOST_TEST_NO_LIB redefined warning.
 
 # Ignore some warning in test on gcc
-if ($cxx.class == 'gcc')
-{
-    cxx.coptions += "-Wno-dangling-reference" "-Wno-sign-compare" "-Wno-unused" "-Wno-deprecated"
-}
+info cxx.class is $cxx.class
+cxx.coptions += "-Wno-dangling-reference" "-Wno-sign-compare" "-Wno-unused" "-Wno-deprecated" "-Wno-unknown-warning-option"
