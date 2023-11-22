@@ -27,3 +27,6 @@ tests/
 
 # cxx.poptions =+ "-I$out_root" "-I$src_root"
 cxx.poptions =+ "-DUNITTEST_FRAMEWORK_LIBRARY_EXIST" # Fixed BOOST_TEST_NO_LIB redefined warning.
+
+# Ignore some warning in test
+cxx.coptions += "-Wno-dangling-reference" "-Wno-sign-compare"
