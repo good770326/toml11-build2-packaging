@@ -29,7 +29,11 @@ tests/
 cxx.poptions =+ "-DUNITTEST_FRAMEWORK_LIBRARY_EXIST" # Fixed BOOST_TEST_NO_LIB redefined warning.
 
 # Ignore some warning in test
-if ($cxx.class != 'msvc')
+if ($cxx.class == 'msvc')
+{
+    cxx.coptions += /W1 /wd4003 # disable c4003: not enough arguments for function-like macro invocation 'TOML11_ARGS_SIZE_IMPL'
+}
+else
 {
     cxx.coptions += "-Wno-dangling-reference" "-Wno-sign-compare" "-Wno-unused" "-Wno-deprecated" "-Wno-unknown-warning-option"
 }
